@@ -21,6 +21,6 @@ void Car::stop() {
   return started = false;
 }
 
-void Car::getMileage() {
+uint16_t Car::getMileage() {
   return mileage;
 }
