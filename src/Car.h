@@ -1,5 +1,5 @@
 /**
- * Example libary implemenation for Arduino
+ * Example libary implementation for Arduino
  * Car class header
  */
 
@@ -17,10 +17,10 @@ class Car {
     void drive(uint16_t miles);
     void stop();
     uint16_t getMileage();
-  private:
-    bool started;
-    uint16_t mileage;
     String make;
+    bool started;
+  private:
+    uint16_t mileage;
 };
 
 #endif // _CAR_H
