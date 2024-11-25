@@ -1,20 +1,19 @@
 #include "Car.h"
 
+Car myCar = carInit("Volvo");
+
 void setup() {
   Serial.begin(115200);
-  carInit("Volvo");
-  carStart();
+  carStart(myCar);
 }
 
 void loop() {
-  if (carStarted) {
-    carDrive(10);
-    Serial.println("My %s drove 10 miles", make);
-    // can't access myCar.mileage directly, it's private
-    // use accessor Car::getMileage() instead
-    if (carGetMileage() > 50) {
-      carStop()
-      Serial.println("I drove my %s to my destination!", make)
+  if (myCar->started) {
+    carDrive(myCar, 10);
+    Serial.println("My %s drove 10 miles", myCar->make);
+    if (carGetMileage(myCar) > 50) {
+      carStop(myCar)
+      Serial.println("I drove my %s to my destination!", myCar->make)
     }
   }
   // wait 5 seconds

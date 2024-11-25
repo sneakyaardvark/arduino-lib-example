@@ -10,13 +10,17 @@
 #include "Arduino.h"
 
 #define MAX_MILEAGE UINT16_MAX
-extern String make;
-extern bool carStarted;
 
-void carInit(String);
-void carDrive(uint16_t);
-void carStop();
-bool carStart();
-uint16_t carGetMileage();
+typedef struct {
+  String make;
+  bool started;
+  uint16_t mileage;
+} Car_t *Car;
+
+Car carInit(String);
+void carDrive(Car, uint16_t);
+void carStop(Car);
+bool carStart(Car);
+uint16_t carGetMileage(Car);
 
 #endif // _CAR_H

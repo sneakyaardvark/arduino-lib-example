@@ -1,5 +1,4 @@
 # arduino-lib-example
 An example used to teach library creation for Arduino.
 
-This branch is an example of using modular code without making a formal library.
-More or less, this is an example of how not to do it!
+This branch shows an implementation without C++ OOP. One step improved from the no-lib-modularization branch.
