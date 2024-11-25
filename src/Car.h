@@ -1,6 +1,7 @@
 /**
- * Example libary implemenation for Arduino
- * Car class header
+ * Example implementation for Arduino
+ * without a library
+ * Car hear
  */
 
 #ifndef _CAR_H
@@ -9,18 +10,13 @@
 #include "Arduino.h"
 
 #define MAX_MILEAGE UINT16_MAX
+extern String make;
+extern bool carStarted;
 
-class Car {
-  public:
-    Car(String make);
-    bool start();
-    void drive(uint16_t miles);
-    void stop();
-    uint16_t getMileage();
-  private:
-    bool started;
-    uint16_t mileage;
-    String make;
-};
+void carInit(String);
+void carDrive(uint16_t);
+void carStop();
+bool carStart();
+uint16_t carGetMileage();
 
 #endif // _CAR_H

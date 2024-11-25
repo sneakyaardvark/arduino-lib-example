@@ -1,26 +1,32 @@
 #include "Arduino.h"
 #include "Car.h"
 
-Car::Car(String carMake) {
+String make;
+uint16_t mileage;
+bool carStarted;
+
+
+void carInit(String carMake) {
   make = carMake;
   mileage = 0;
+  started = false;
 }
 
-bool Car::start() {
+bool carStart() {
   if (mileage >= MAX_MILEAGE) return false;
   started = true;
   return true;
 }
 
-void Car::drive(uint16_t miles) {
+void carDrive(uint16_t miles) {
   if (!started) return;
   mileage += miles;
 }
 
-void Car::stop() {
+void carStop() {
   return started = false;
 }
 
-void Car::getMileage() {
+void carGetMileage() {
   return mileage;
 }
